@@ -27,6 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Consumer<ProfileController>(
         builder: (BuildContext context, provider, Widget? child) {
           return Scaffold(
+            resizeToAvoidBottomInset: false,
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: StreamBuilder(
@@ -121,17 +122,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         const SizedBox(
                           height: 40,
                         ),
-                        ReuseableRow(
-                          title: "Username",
-                          iconData: Icons.person,
-                          value: map["Username"],
+                        GestureDetector(
+                          onTap: (){
+                            provider.showUserNameDialogAlert(context,map["Username"]);
+                          },
+                          child: ReuseableRow(
+                            title: "Username",
+                            iconData: Icons.person,
+                            value: map["Username"],
+                          ),
                         ),
-                        ReuseableRow(
-                          title: "Phone",
-                          iconData: Icons.phone,
-                          value: map["phone_no"] == ""
-                              ? "xxxx-xx-xx-xxx"
-                              : map["phone_no"],
+                        GestureDetector(
+                          onTap: (){
+                            provider.showPhoneDialogAlert(context, map["phone_no"]);
+                          },
+                          child: ReuseableRow(
+                            title: "Phone",
+                            iconData: Icons.phone,
+                            value: map["phone_no"] == ""
+                                ? "xxxx-xx-xx-xxx"
+                                : map["phone_no"],
+                          ),
                         ),
                         ReuseableRow(
                           title: "Email",

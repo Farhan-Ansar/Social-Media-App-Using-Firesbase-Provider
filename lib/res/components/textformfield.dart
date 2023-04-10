@@ -36,6 +36,7 @@ class MyInputTextField extends StatelessWidget {
         keyboardType: keyBoardType,
         obscureText: obscure,
         enabled: enable,
+        cursorColor: AppColors.primaryTextTextColor,
         style: Theme.of(context).textTheme.bodyText2!.copyWith(height:0, fontSize: 19),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(15),
@@ -50,6 +51,7 @@ class MyInputTextField extends StatelessWidget {
             ),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
+
 
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(

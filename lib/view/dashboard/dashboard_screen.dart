@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:socialmedia_firebase/res/color.dart';
 import 'package:socialmedia_firebase/view/dashboard/Profile/profile.dart';
+import 'package:socialmedia_firebase/view/dashboard/User/user_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       const Text("Home"),
       const Text("Chat"),
       const Text("Add"),
-      const Text("Message"),
+      const UserListScreen(),
       const ProfileScreen(),
     ];
   }
